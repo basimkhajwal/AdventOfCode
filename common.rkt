@@ -13,8 +13,9 @@
 
 (define (multipart-question file-name extract-data #:name [question-name "AdventOfCode"])
   (define input (process-file file-name extract-data))
-  (lambda parts (begin
-    (printf "~a:\n" question-name)
-    (for ([i '("One" "Two" "Three" "Four" "Five")] ; assuming no more than 5 parts :D
-          [p parts])
-      (printf "Part ~a: ~a\n" i (p input))))))
+  (lambda parts
+    (begin
+      (printf "~a:\n" question-name)
+      (for ([i '("One" "Two" "Three" "Four" "Five")] ; assuming no more than 5 parts :D
+            [p parts])
+        (printf "Part ~a: ~a\n\n" i (time (p input)))))))
