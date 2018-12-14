@@ -3,3 +3,4 @@
 # DrRacket compiled files
 *.dep
 *.zo
+*.rkt~
